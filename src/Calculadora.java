@@ -15,8 +15,10 @@ public class Calculadora {
         double num2 = scanner.nextDouble();
 
         double soma = num1 + num2;
+        double subtracao = num1 - num2;
 
         System.out.println("Resultado da soma: " + soma);
+        System.out.println("Resultado da subtração: " + subtracao);
 
         scanner.close();
     }
