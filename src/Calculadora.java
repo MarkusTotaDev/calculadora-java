@@ -7,6 +7,13 @@ public class Calculadora {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("=== Calculadora Java ===");
+        System.out.println("1 - Soma");
+        System.out.println("2 - Subtração");
+        System.out.println("3 - Multiplicação");
+        System.out.println("4 - Divisão");
+
+        System.out.print("Escolha a operação: ");
+        int opcao = scanner.nextInt();
 
         System.out.print("Digite o primeiro número: ");
         double num1 = scanner.nextDouble();
@@ -14,19 +21,29 @@ public class Calculadora {
         System.out.print("Digite o segundo número: ");
         double num2 = scanner.nextDouble();
 
-        double soma = num1 + num2;
-        double subtracao = num1 - num2;
-        double multiplicacao = num1 * num2;
-        double divisao = num2 != 0 ? num1 / num2 : 0;
+        switch (opcao) {
+            case 1:
+                System.out.println("Resultado: " + (num1 + num2));
+                break;
 
-        System.out.println("Soma: " + soma);
-        System.out.println("Subtração: " + subtracao);
-        System.out.println("Multiplicação: " + multiplicacao);
+            case 2:
+                System.out.println("Resultado: " + (num1 - num2));
+                break;
 
-        if (num2 != 0) {
-            System.out.println("Divisão: " + divisao);
-        } else {
-            System.out.println("Divisão: não é possível dividir por zero");
+            case 3:
+                System.out.println("Resultado: " + (num1 * num2));
+                break;
+
+            case 4:
+                if (num2 != 0) {
+                    System.out.println("Resultado: " + (num1 / num2));
+                } else {
+                    System.out.println("Não é possível dividir por zero");
+                }
+                break;
+
+            default:
+                System.out.println("Opção inválida");
         }
 
         scanner.close();
